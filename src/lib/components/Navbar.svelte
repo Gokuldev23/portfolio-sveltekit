@@ -13,29 +13,32 @@
 </script>
 
 
-<nav class="max-w-xs mx-auto space-x-5">
+<nav class="w-fit mx-auto fixed left-1/2 -translate-x-1/2 z-10 flex justify-center rounded-full p-1 bg-blue-500 ">
     {#each paths as {name,path}}
         {@const active = $page.url.pathname == path ? 'page' : null}
-        <a href={path} class="tab relative z-10 font-bold" aria-current={active}>{name}</a>
+        <a href={path} class="tab z-10 w-24 text-center rounded-full relative font-bold" aria-current={active}>
+            {name}
+        </a>
     {/each}
 </nav>
 
 
 <style>
+   
     .tab{
         z-index: 100;
+        padding: 5px 10px;
+        color: white;
     }
-    .tab[aria-current='page']::before {
-        content: '';
-        width: calc(100% + 10px);
-        height: 100%;
-        padding: 10px 20px;
-        border-radius: 40px;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        position: absolute;
-        background-color: yellow;
-        view-transition-name: active-page;
+    .tab[aria-current='page'] {
+       background-color: white;
+       view-transition-name: tab;
+       color: rgb(59,130,246);
+    }
+    ::view-transition-group(tab) {
+        /* animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); */
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        
+        animation-duration: 0.5s;
     }
 </style>
