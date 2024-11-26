@@ -2,24 +2,30 @@
 	import '../app.css';
 	import { onNavigate } from '$app/navigation'
 	import Navbar from '$lib/components/Navbar.svelte';
+	import { page } from '$app/stores';
 
+	let previousPath = '';
 
 	onNavigate((navigation) => {
-		if (!document.startViewTransition) return
 
-		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
-				resolve()
-				await navigation.complete
-			})
-		})
-	})
+    if (!document.startViewTransition) return;
+
+    // Start the view transition
+    return new Promise((resolve) => {
+      document.startViewTransition(() => {
+        resolve();
+        navigation.complete.finally(() => {
+          document.documentElement.removeAttribute('view-transition-name');
+        });
+      });
+    });
+  });
 
 	let { children } = $props();
 </script>
 
 
-<div class="p-4 relative overflow-hidden">
+<div class="p-4 relative h-dvh overflow-hidden dark:bg-slate-950">
 	<Navbar/>
 	{@render children()}
 </div>
@@ -31,4 +37,33 @@
 	:global(*){
 		font-family: "IBM Plex Mono", serif;
 	}
+	:root {
+    --view-transition-duration: 0.5s;
+  }
+
+  :root[view-transition-name='slide-in'] {
+    animation: slideIn var(--view-transition-duration) ease-out;
+  }
+
+  :root[view-transition-name='slide-out'] {
+    animation: slideOut var(--view-transition-duration) ease-in;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
 </style>
