@@ -25,7 +25,7 @@
 </script>
 
 
-<div class="p-4 relative h-dvh overflow-hidden dark:bg-slate-950">
+<div class="p-4 relative h-dvh overflow-x-hidden bg-black">
 	<Navbar/>
 	{@render children()}
 </div>
