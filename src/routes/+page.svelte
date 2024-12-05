@@ -6,11 +6,11 @@
 	import expoLogo from '$lib/assets/expo.svg';
 </script>
 
-<div class="absolute top-0 h-[200vh] w-[300px] bg-blue-500 blur-[200px]"></div>
+<div class="absolute top-0 h-[200vh] w-[100px] bg-blue-500 blur-[200px]"></div>
 <main class=" relative mx-auto min-h-screen w-full max-w-7xl">
 	<div class="grid lg:grid-cols-[1fr_300px] h-screen  w-full items-center relative  lg:px-10 px-4">
     <!-- <div></div> -->
-    <div class="h-40 w-3/4 left-0 bg-blue-500 absolute top-1/3  rounded-r-[100%] blur-[200px]"></div>
+    <div class="h-40 w-1/4 left-0 bg-blue-500 absolute top-1/3  rounded-r-[100%] blur-[200px]"></div>
 		<h1 style="" class="tagline text-2xl lg:text-5xl/[100px] relative z-10 font-extrabold text-[#8458fc]">
 			  Efficient Design, Seamless Performance – Web & App Developer
 		</h1>
@@ -18,7 +18,7 @@
 	</div>
 	<div id="about" class="text-white h-screen py-20 content-center relative">
     <div class="h-40 w-full left-0 bg-blue-500 absolute top-1/3 rounded-r-[100%] blur-[200px]"></div>
-    <div class="space-y-10">
+    <div class="space-y-10 relative z-10">
       <h1 class="text-5xl font-bold mb-10">Who Am I?</h1>
   
       <p>

@@ -12,7 +12,7 @@
 </script>
 
 
-<nav class="w-fit mx-auto fixed left-1/2 h-10 shadow-2xl shadow-black -translate-x-1/2 z-10 flex justify-center  rounded-full p-1 ">
+<nav class="w-fit mx-auto fixed z-50 left-1/2 h-10 shadow-2xl shadow-black -translate-x-1/2 z-10 flex justify-center  rounded-full p-1 ">
   
     {#each paths as {name,path,icon}}
         {@const active = $page.url.pathname == path ? 'page' : null}
