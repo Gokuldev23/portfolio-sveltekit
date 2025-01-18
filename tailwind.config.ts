@@ -5,7 +5,13 @@ export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
 
   theme: {
-    extend: {}
+    extend: {
+      colors:{
+        primary:'#4D96EE',
+        secondary:'#7446D1',
+        warning:'#99D139'
+      }
+    }
   },
 
   plugins: [typography]

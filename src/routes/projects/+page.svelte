@@ -1,86 +1,33 @@
 <script>
-
+    import { projects } from "$lib/js/projects";
+	import { tick } from "svelte";
 </script>
 
 
 
+<main>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 my-32 max-w-5xl mx-auto ">
+        {#each projects as project,i}
 
-<main class="h-full content-center">
-
-    <div class="parent h-3/4 max-w-5xl mx-auto">
-        <div class="div1 border border-white text-white content-center w-full text-center">1</div>
-        <div class="div2 border border-white text-white content-center w-full text-center">2</div>
-        <div class="div3 border border-white text-white content-center w-full text-center">3</div>
-        <div class="div4 border border-white text-white content-center w-full text-center">4</div>
-        <div class="div5 border border-white text-white content-center w-full text-center">5</div>
+            <a href="projects/{project.title}" class="shadow-lg relative overflow-hidden bg-radial">
+                <img style="view-transition-name: {project.title}-logo;" class="absolute left-0 top-0 size-20  z-10 rounded-full logo" src="{project.logo}" alt="">
+                <img  style="view-transition-name: {project.title}-image;" class="text-xl brightness-75 bg" src={project.image} alt={project.title} />
+                <div class="p-4">
+                    <h1 style="view-transition-name:{project.title};" class="text-gray-900 font-bold text-2xl capitalize">{project.title}</h1>
+                    <p style="view-transition-name: {project.title}-description;" class="mt-2 text-gray-600 text-sm line-clamp-6">{project.description}</p>
+                    <div class="flex items-center mt-3 text-blue-500 hover:underline">View Project</div>
+                </div>
+            </a>
+        {/each}
     </div>
-        
 </main>
 
+
 <style>
-
-.parent {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 8px;
-}
-    
-.div1 {
-    grid-row: span 3 / span 3;
-}
-
-.div2 {
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 1;
-}
-
-.div3 {
-    grid-column-start: 2;
-    grid-row-start: 1;
-}
-
-.div4 {
-    grid-column-start: 2;
-}
-
-.div5 {
-    grid-column: span 2 / span 2;
-    grid-column-start: 2;
-    grid-row-start: 3;
-}
-        
-@media (max-width: 768px) {
-    .parent {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-      gap: 12px;
+    a > .logo {
+        view-transition-class: logo-image;
     }
-
-    .div1 {
-      grid-row: span 2/span 2;
-      grid-column: auto;
+    :global(::view-transition-group(.logo-image)) {
+        animation-timing-function:cubic-bezier(0.215, 0.610, 0.355, 1);
     }
-
-    .div2 {
-      grid-row: auto;
-      grid-column: auto;
-    }
-
-    .div3 {
-      grid-row: span 2 / span 2;
-      grid-column: auto;
-    }
-
-    .div4 {
-      grid-row: auto;
-      grid-column: auto;
-    }
-
-    .div5 {
-      grid-row: auto;
-      grid-column: span 2/ span 2;
-    }
-  }
 </style>
