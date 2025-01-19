@@ -35,11 +35,6 @@
 	:global(*){
 		font-family: "IBM Plex Mono", serif;
 	}
-  ::view-transition-new(root) {
-    animation-duration: 0.2s;
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-
 </style>
 
 <svelte:head>
