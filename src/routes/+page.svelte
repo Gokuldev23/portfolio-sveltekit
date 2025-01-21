@@ -6,7 +6,7 @@
 </script>
 
 
-<section class="overflow-y-hidden">
+<section class="">
     <Hero/>
     <About/>
 </section>

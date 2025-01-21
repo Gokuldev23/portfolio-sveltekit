@@ -1,6 +1,6 @@
 
 
-<main class="h-dvh md:py-40 max-w-7xl mx-auto px-4">
+<main class=" md:py-40 max-w-7xl mx-auto px-4">
     <h1 class="text-primary text-[40px] font-bold md:mb-10 mb-4">About</h1>
 
     <div id="about" class="md:space-y-10 space-y-5 md:text-xl/8 font-semibold cursor-default">
