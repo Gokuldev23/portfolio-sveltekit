@@ -12,14 +12,12 @@
 </script>
 
 
-<header class="w-fit mx-auto fixed top-4 left-1/2 px-10  shadow-2xl shadow-black -translate-x-1/2 flex justify-center  rounded-full p-1 ">
+<header class="w-fit mx-auto fixed top-4 left-1/2 px-2  shadow-2xl shadow-black -translate-x-1/2 flex justify-center  rounded-full p-1 ">
   
     {#each paths as {name,path,icon}}
         <div>
             <a href={path} class="tab z-10 flex shrink-0 justify-center text-sm md:text-base items-center gap-2 md:w-32 w-24 text-center rounded-full relative font-bold" aria-current={$page.url.pathname == path ? 'page' : null}>
-                <span>
-                    <Icon icon={icon} width={20}/>
-                </span>
+                
                 {name}
             </a>
         </div>
@@ -44,13 +42,13 @@
         position: relative;
         color: black;
     }
-    .tab[aria-current='page'] ::before{
+    .tab[aria-current='page']::before{
         content: '';
         position: absolute;
         height: 4px;
         border-radius: 50px;
-        width: 100%;
-        bottom: 0;
+        width: 10px;
+        bottom: -2px;
         left: 50%;
         transform: translate(-50%,0);
         background-color: rgb(59,130,246);

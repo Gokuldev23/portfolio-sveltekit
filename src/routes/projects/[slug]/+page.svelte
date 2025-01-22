@@ -13,7 +13,7 @@
 
 <main class="min-h-screen  text-black mt-20 md:mt-0">
     <div class="w-full max-h-[60vh] flex justify-center bg-black">
-        <img style="view-transition-name:{project_name}-image;" class="max-w-5xl w-full rounded-lg" src="{image}" alt="">
+        <img style="view-transition-name:{project_name}-image;" class="max-w-5xl w-full aspect-auto rounded-lg" src="{image}" alt="">
     </div>
     <div class="max-w-5xl mx-auto p-4">
         <div class="flex items-center gap-4">

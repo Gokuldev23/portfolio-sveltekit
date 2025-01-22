@@ -36,6 +36,7 @@
 		font-family: "IBM Plex Mono", serif;
     scrollbar-width: none;
 	}
+
 </style>
 
 <svelte:head>

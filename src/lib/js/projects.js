@@ -1,13 +1,14 @@
 export let projects = [
 	{
-		title: 'gramlok',
+		title: 'Gramlok',
 		description: `A large-scale social media platform designed to bridge connections between villages across India. 
             Gramlok fosters local engagement by supporting 17 regional languages, enabling users to post activities, news, and events seamlessly.
             It empowers communities by providing a marketplace for buying and selling goods without platform fees and offers a space to showcase and promote 
             local arts and services. Gramlok exemplifies inclusive digital innovation, bringing rural communities closer through technology.`,
 		logo: '/gramLogo.png',
-		image: '/gramlok-bg.png',
+		image: '/gramlok-bg.webp',
 		link: 'https://www.gramlok.in',
+		techStack: ['svelte', 'svelteKit', 'pwa', 'node', 'express','capacitor'],
 		company: 'Lulugram'
 	},
 	{
@@ -17,8 +18,9 @@ export let projects = [
          Each crossword is curated to align with the challenging vocabulary requirements of competitive exams, ensuring users can learn effectively while having fun.
          The app also includes progress tracking, word definitions, and contextual examples to reinforce learning.`,
 		logo: '/cwdLogo.png',
-		image: '/cwd-bg.png',
+		image: '/cwd-bg.webp',
 		link: null,
+		techStack: ['SvelteKit', 'Tailwind CSS', 'Firebase','capacitor'],
 		company: 'Lulugram'
 	},
 	{
@@ -28,8 +30,9 @@ export let projects = [
          Powered by AI, the app personalizes learning paths to suit individual needs and provides an engaging environment for students to grasp complex topics 
          efficiently. Its intuitive design ensures accessibility across devices, fostering a culture of continuous learning.`,
 		logo: '/vidhyavartLogo.png',
-		image: '/vidyavart-bg.png',
+		image: '/vidyavart-bg.webp',
 		link: null,
+		techStack: ['expo','React Native','mistral AI','Langchain js','nativewind','node','express','postgress'],
 		company: 'Lulugram'
 	},
 	{
@@ -40,8 +43,9 @@ export let projects = [
                       or sports updates, Interacly AI is your go-to source for a wide range of interests, all in one place.
                       The app's intelligent responses and smooth interaction make learning and discovery enjoyable.`,
 		logo: '/interaclyLogo.png',
-		image: '/interacly-bg.png',
+		image: '/interacly-bg.webp',
 		link: 'https://alpha.interacly.com/',
+		techStack: ['svelte','sveltekit','tailwind', 'Node.js'],
 		company: 'Qbtrix'
 	}
 ];
