@@ -15,8 +15,9 @@
 <header class="w-fit mx-auto fixed top-4 left-1/2 px-2  shadow-2xl shadow-black -translate-x-1/2 flex justify-center  rounded-full p-1 ">
   
     {#each paths as {name,path,icon}}
+    {@const active = $page.url.pathname.startsWith('/projects')}
         <div>
-            <a href={path} class="tab z-10 flex shrink-0 justify-center text-sm md:text-base items-center gap-2 md:w-32 w-24 text-center rounded-full relative font-bold" aria-current={$page.url.pathname == path ? 'page' : null}>
+            <a href={path} class="tab z-10 flex shrink-0 justify-center text-sm md:text-base items-center gap-2 md:w-32 w-24 text-center rounded-full relative font-bold" aria-current={$page.url.pathname == path || (path == '/projects' && active) ? 'page' : null}>
                 
                 {name}
             </a>
