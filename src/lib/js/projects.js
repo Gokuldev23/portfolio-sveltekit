@@ -22,7 +22,7 @@ export let projects = [
 					  word definitions, and contextual examples to reinforce learning.`,
 		logo: '/cwdLogo.png',
 		image: '/cwd-bg.webp',
-		link: null,
+		link: 'https://xcrossword.com',
 		techStack: ['SvelteKit', 'Tailwind CSS', 'Firebase','capacitor'],
 		platform:['web','android','ios'],
 		company: 'Lulugram'
@@ -36,7 +36,7 @@ export let projects = [
 					  devices, fostering a culture of continuous learning.`,
 		logo: '/vidhyavartLogo.png',
 		image: '/vidyavart-bg.webp',
-		link: null,
+		link: 'https://vidhyavart.in',
 		techStack: ['expo','React Native','mistral AI','Langchain js','nativewind','node','express','postgress'],
 		platform:['android','ios'],
 		company: 'Lulugram'
@@ -50,8 +50,8 @@ export let projects = [
                       The app's intelligent responses and smooth interaction make learning and discovery enjoyable.`,
 		logo: '/interaclyLogo.png',
 		image: '/interacly-bg.webp',
-		link: 'https://alpha.interacly.com/',
-		techStack: ['svelte','sveltekit','tailwind', 'Node.js'],
+		link: 'https://interacly.ai/',
+		techStack: ['svelte','sveltekit','tailwind', 'gsap'],
 		platform:['web'],
 		company: 'Qbtrix'
 	}

@@ -49,7 +49,7 @@
         height: 4px;
         border-radius: 50px;
         width: 10px;
-        bottom: -2px;
+        bottom: -4px;
         left: 50%;
         transform: translate(-50%,0);
         background-color: rgb(59,130,246);

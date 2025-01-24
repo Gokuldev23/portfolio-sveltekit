@@ -32,10 +32,11 @@
         <p style="view-transition-name: {project_name}-description;" class="mt-4">{description}</p>
     </div>
 
-    <div class="grid grid-cols-2 my-10">
+
+    <div class="grid md:grid-cols-2 gap-y-10 my-10">
         <div class="">
             <h1 class="text-red-500 font-bold mb-5 uppercase text-2xl">Tech stack used</h1>
-            <div class="grid grid-cols-4 gap-4 items-center flex-wrap capitalize">
+            <div class="grid  md:grid-cols-3 gap-4 items-center flex-wrap capitalize">
                 {#each current_project.techStack as stack}
                     <p class="bg-black hover:bg-white border-2 text-center border-black cursor-default hover:text-black transition-all duration-200 text-white px-3 py-1 rounded-full">{stack}</p>
                 {/each}
@@ -46,13 +47,13 @@
             <h1 class="text-blue-500 font-bold mb-5 uppercase text-center text-2xl">Available</h1>
             <div class="flex justify-center gap-4 items-center w-full mx-auto flex-wrap capitalize">
                 {#each current_project.platform as platform}
-                    <div class="bg-slate-300 hover:bg-white border-2 flex gap-2 items-center text-center border-black 
+                    <a href="{platform == 'web'?current_project.link:'#'}" class="bg-slate-300 hover:bg-white border-2 flex gap-2 items-center text-center border-black 
                     cursor-default hover:text-black transition-all duration-200 text-slate-800 px-3 py-1 rounded-full">
                         <div>
                             <Icon icon={icons[platform]}  />
                         </div>
                         {platform}
-                    </div>
+                    </a>
                 {/each}
             </div>
         </div>
