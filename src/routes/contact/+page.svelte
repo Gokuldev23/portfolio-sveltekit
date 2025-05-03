@@ -1,4 +1,6 @@
 <script>
+    import resume from '$lib/assets/Gokul_frontend_dev_Resume.pdf';
+
     let name = '';
     let email = '';
     let message = '';
@@ -33,7 +35,7 @@
         </form>
         <div class="text-center">or</div>
         <div id="download" class="md:w-fit w-full mx-auto">
-            <a href="/src/lib/assets/Gokul_frontend_dev_Resume.pdf" download="Gokul_Frontend_Dev_Resume.pdf" 
+            <a href={resume} download="Gokul_Frontend_Dev_Resume.pdf" 
             class="text-center bg-black px-4 py-2  w-full rounded-full mt-4 text-sm inline-block text-white font-semibold hover:bg-blue-500 hover:text-white transition-all duration-500">Download my resume</a>
         </div>
 
