@@ -10,8 +10,11 @@ export default {
         primary:'#4D96EE',
         secondary:'#7446D1',
         warning:'#99D139'
+      },
+      screens : {
+        xs:"578px"
       }
-    }
+    },
   },
 
   plugins: [typography]
