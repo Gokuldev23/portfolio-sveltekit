@@ -4,7 +4,6 @@
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
-		// Start the view transition
 		return new Promise((resolve) => {
 			document.startViewTransition(() => {
 				resolve();
@@ -18,7 +17,7 @@
 	let { children } = $props();
 </script>
 
-<div class=" relative h-dvh overflow-x-hidden bg-black">
+<div class="relative h-dvh overflow-x-hidden bg-black">
 	{@render children()}
 </div>
 
