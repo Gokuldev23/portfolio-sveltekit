@@ -5,7 +5,5 @@
 </script>
 
 <section class="">
-	<!-- <Hero/> -->
-	<!-- <About/> -->
 	<Hero2 />
 </section>

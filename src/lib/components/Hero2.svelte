@@ -6,7 +6,7 @@
 
 	let metricsData = [
 		{
-			metric: '2+',
+			metric: '2',
 			description: 'Years Experience',
 			bg: 'bg-zinc-800'
 		},
@@ -26,7 +26,7 @@
 {#snippet project(
 	/** @type {string} */ name,
 	/** @type {string} */ image,
-	/** @type {string} */ link
+	/** @type {string|null} */ link
 )}
 	<div class="project relative h-fit">
 		<img class="w-56 rounded-xl" src={image} alt="" />
@@ -57,9 +57,9 @@
 				class="relative hidden rounded-xl bg-neutral-900 p-4 py-6 pb-12 font-bold sm:block"
 			>
 				<h1 class="text-4xl/[44px] tracking-wider text-white">{slogan}</h1>
-				<button
+				<a href="mailto:gokulvenkat.dev@gmail.com"
 					class="absolute bottom-2 right-5 rounded-full bg-violet-600 px-5 py-2 text-xl font-semibold text-white"
-					>Connect me 👋</button
+					>Connect me 👋</a
 				>
 			</div>
 			<div id="metrics" class="my-5 grid grid-cols-3 gap-4">

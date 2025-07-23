@@ -1,4 +1,18 @@
-export let projects = [
+type Project = {
+	title: string;
+	description: string;
+	contribution: string[];
+	logo: string;
+	image: string;
+	link: string | null;
+	techStack: string[];
+	platform: string[];
+	company: string;
+	underDevelpoment: boolean;
+	solo: boolean;
+};
+
+export const projects: Project[] = [
 	{
 		title: 'Gramlok',
 		description: `A large-scale social media platform designed to bridge connections between villages across India. Gramlok
@@ -92,6 +106,34 @@ export let projects = [
 		platform: ['web'],
 		company: 'Lulugram',
 		underDevelpoment: false,
+		solo: true
+	},
+	{
+		title: 'Centralized Support System',
+		description: `A real-time, multi-tenant support system built for Lulugram and its connected platforms. The system enables users to initiate chats from within any app and routes incoming messages to all active admins. 
+	              The first admin to respond claims the session, ensuring quick, personalized support without collisions. Built with scalability and performance in mind, it serves as a centralized hub for managing customer interactions across apps.`,
+		contribution: [
+			'Independently designed and built the entire support system from scratch, including frontend, backend, and socket-based real-time messaging.',
+			'Implemented multi-admin broadcasting, secure session handling, and auto-claiming logic to ensure smooth support workflows.',
+			'Used React Native for the mobile app interface and Node.js + PostgreSQL (with Prisma) on the backend.',
+			'Designed a multi-tenant architecture to handle support for multiple apps, isolating user data while sharing the core system.',
+			'Delivered a scalable and reusable support system that now serves as a shared foundation across internal products.'
+		],
+		logo: '/lulugramLogo.png',
+		image: '/support-system-preview.png',
+		link: null, // Use actual link if exists or leave blank
+		techStack: [
+			'React Native',
+			'SvelteKit',
+			'Tailwind',
+			'Node.js',
+			'PostgreSQL',
+			'Prisma',
+			'Socket.io'
+		],
+		platform: ['mobile'],
+		company: 'Lulugram',
+		underDevelpoment: true,
 		solo: true
 	}
 ];
