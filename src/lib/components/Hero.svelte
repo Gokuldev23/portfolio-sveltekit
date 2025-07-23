@@ -12,7 +12,7 @@
     <h1 class="text-4xl font-bold mb-4">👋 Hey, I'm Gokul</h1>
     <p class="text-lg text-gray-300 max-w-xl">Founder-minded engineer building fast, AI-powered, and scalable apps. From startup backends to slick mobile UIs — I ship at speed.</p>
     <div class="mt-6 space-x-4">
-      <a href="/resume.pdf" class="bg-white text-black font-semibold px-4 py-2 rounded-xl">📄 Resume</a>
+      <a href="/Gokul_Full_Stack_Dev.pdf" class="bg-white text-black font-semibold px-4 py-2 rounded-xl">📄 Resume</a>
       <a href="mailto:gokul@example.com" class="border border-white px-4 py-2 rounded-xl">📬 Contact</a>
     </div>
   </section>

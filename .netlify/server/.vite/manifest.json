@@ -8,13 +8,16 @@
       "_internal.js"
     ]
   },
+  "_client.js": {
+    "file": "chunks/client.js",
+    "name": "client",
+    "imports": [
+      "_exports.js"
+    ]
+  },
   "_exports.js": {
     "file": "chunks/exports.js",
     "name": "exports"
-  },
-  "_functions.js": {
-    "file": "chunks/functions.js",
-    "name": "functions"
   },
   "_index.js": {
     "file": "chunks/index.js",
@@ -36,7 +39,7 @@
     "name": "stores",
     "imports": [
       "_index.js",
-      "_exports.js"
+      "_client.js"
     ]
   },
   "node_modules/.pnpm/@sveltejs+kit@2.8.0_@sveltejs+vite-plugin-svelte@4.0.0_svelte@5.1.15_vite@5.4.11__svelte@5.1.15_vite@5.4.11/node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
@@ -60,10 +63,6 @@
       "_exports.js"
     ]
   },
-  "src/lib/assets/Gokul_frontend_dev_Resume.pdf": {
-    "file": "_app/immutable/assets/Gokul_frontend_dev_Resume.BKurUCNs.pdf",
-    "src": "src/lib/assets/Gokul_frontend_dev_Resume.pdf"
-  },
   "src/routes/+layout.js": {
     "file": "entries/pages/_layout.js",
     "name": "entries/pages/_layout",
@@ -77,11 +76,10 @@
     "isEntry": true,
     "imports": [
       "_index.js",
-      "_stores.js",
-      "_functions.js"
+      "_client.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.7feoOLe9.css"
+      "_app/immutable/assets/_layout.uD1_vGdL.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -89,20 +87,12 @@
     "name": "entries/pages/_page.svelte",
     "src": "src/routes/+page.svelte",
     "isEntry": true,
-    "css": [
-      "_app/immutable/assets/_page.BzmT9UXk.css"
-    ]
-  },
-  "src/routes/contact/+page.svelte": {
-    "file": "entries/pages/contact/_page.svelte.js",
-    "name": "entries/pages/contact/_page.svelte",
-    "src": "src/routes/contact/+page.svelte",
-    "isEntry": true,
     "imports": [
-      "_index.js"
+      "_index.js",
+      "_projects.js"
     ],
-    "assets": [
-      "_app/immutable/assets/Gokul_frontend_dev_Resume.BKurUCNs.pdf"
+    "css": [
+      "_app/immutable/assets/_page.DJvjp8Jr.css"
     ]
   },
   "src/routes/projects/+page.svelte": {
@@ -115,7 +105,7 @@
       "_projects.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.rCgAlxg4.css"
+      "_app/immutable/assets/_page.CsO8Lz2H.css"
     ]
   },
   "src/routes/projects/[slug]/+page.svelte": {
@@ -126,8 +116,7 @@
     "imports": [
       "_index.js",
       "_stores.js",
-      "_projects.js",
-      "_functions.js"
+      "_projects.js"
     ],
     "css": [
       "_app/immutable/assets/_page.rCgAlxg4.css"
