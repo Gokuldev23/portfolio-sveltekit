@@ -1,8 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import { page } from '$app/stores';
 	import { onNavigate } from '$app/navigation';
-	import Navbar from '$lib/components/Navbar.svelte';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -21,7 +19,6 @@
 </script>
 
 <div class=" relative h-dvh overflow-x-hidden bg-black">
-	<!-- <Navbar/> -->
 	{@render children()}
 </div>
 
