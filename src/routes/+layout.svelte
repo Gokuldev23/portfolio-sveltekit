@@ -1,10 +1,10 @@
 <script lang="ts">
 	import '../app.css';
 	import { onNavigate } from '$app/navigation';
+	import Icon from '@iconify/svelte';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
-		// Start the view transition
 		return new Promise((resolve) => {
 			document.startViewTransition(() => {
 				resolve();
@@ -18,7 +18,13 @@
 	let { children } = $props();
 </script>
 
-<div class=" relative h-dvh overflow-x-hidden bg-black">
+<div class="relative h-dvh overflow-x-hidden bg-black">
+	<div class="fixed right-4 top-4 text-white flex gap-2 items-center bg-yellow-800 px-3 py-0.5 rounded-sm">
+		<div>
+			<Icon icon="arcticons:nrf-toolbox" />
+		</div>
+		<p>In Development</p>
+	</div>
 	{@render children()}
 </div>
 
