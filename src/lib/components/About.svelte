@@ -5,7 +5,7 @@
   <div>
     <h1 class="mb-4 text-4xl font-bold">👋 Hey, I'm Gokul Venkatraman</h1>
 
-    <div class="flex gap-2 *:text-gray-400 flex-wrap whitespace-nowrap  w-[400px] md:w-full overflow-auto  *:bg-neutral-700 *:rounded-md *:px-4 *:py-1 my-4 *:text-xs *:sm:text-sm font-medium">
+    <div class="flex gap-2 *:text-gray-400 flex-wrap whitespace-nowrap  max-w-[400px] md:w-full overflow-auto  *:bg-neutral-700 *:rounded-md *:px-4 *:py-1 my-4 *:text-xs *:sm:text-sm font-medium">
       <p>Founding Engineer</p>
       <p>Frontend Engineer</p>
       <p>FullStack Engineer</p>
