@@ -8,6 +8,13 @@
       "_internal.js"
     ]
   },
+  "_Icon.js": {
+    "file": "chunks/Icon.js",
+    "name": "Icon",
+    "imports": [
+      "_index.js"
+    ]
+  },
   "_client.js": {
     "file": "chunks/client.js",
     "name": "client",
@@ -63,10 +70,10 @@
       "_exports.js"
     ]
   },
-  "src/routes/+layout.js": {
-    "file": "entries/pages/_layout.js",
-    "name": "entries/pages/_layout",
-    "src": "src/routes/+layout.js",
+  "src/routes/+layout.server.js": {
+    "file": "entries/pages/_layout.server.js",
+    "name": "entries/pages/_layout.server",
+    "src": "src/routes/+layout.server.js",
     "isEntry": true
   },
   "src/routes/+layout.svelte": {
@@ -76,10 +83,11 @@
     "isEntry": true,
     "imports": [
       "_index.js",
-      "_client.js"
+      "_client.js",
+      "_Icon.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.uD1_vGdL.css"
+      "_app/immutable/assets/_layout.D4Kdw70z.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -92,7 +100,7 @@
       "_projects.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.DJvjp8Jr.css"
+      "_app/immutable/assets/_page.CKl4l2Bd.css"
     ]
   },
   "src/routes/projects/+page.svelte": {
@@ -115,6 +123,7 @@
     "isEntry": true,
     "imports": [
       "_index.js",
+      "_Icon.js",
       "_stores.js",
       "_projects.js"
     ],
