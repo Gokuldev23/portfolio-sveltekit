@@ -18,7 +18,7 @@
 	let { children } = $props();
 </script>
 
-<div class="relative h-dvh overflow-x-hidden bg-black">
+<div class="relative h-dvh  bg-black">
 	<div class="fixed right-4 top-4 text-white flex gap-2 items-center bg-yellow-800 px-3 py-0.5 rounded-sm">
 		<div>
 			<Icon icon="arcticons:nrf-toolbox" />
@@ -40,6 +40,5 @@
 <style>
 	:global(*) {
 		font-family: 'Poppins', serif;
-		scrollbar-width: none;
 	}
 </style>

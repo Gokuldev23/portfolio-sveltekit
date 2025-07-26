@@ -3,7 +3,7 @@ type Project = {
 	description: string;
 	type: "SIDE" | "CORE",
 	contribution: string[];
-	logo: string;
+	logo: string | null;
 	image: string | null;
 	link: string | null;
 	techStack: string[];
@@ -50,7 +50,7 @@ export const projects: Project[] = [
 			'Designed UI/UX, integrated APIs, optimized performance, and added in-app purchases.',
 			'Managed app submissions to Google Play and App Store.'
 		],
-		logo: '/cwdLogo.png',
+		logo: '/crosswordMart_logo.png',
 		image: '/csmart-square.png',
 		link: 'https://crosswordmart.com',
 		techStack: ['SvelteKit', 'Tailwind CSS', 'Firebase', 'capacitor'],
@@ -106,7 +106,7 @@ export const projects: Project[] = [
 			'Focused on mobile-first responsiveness, accessibility, and SEO-ready markup.',
 			'Delivered a fully deployable, production-ready frontend for marketing and user acquisition campaigns.'
 		],
-		logo: '/vidhyavartLogo.png',
+		logo: '/lulugramLogo.png',
 		image: '/Lulugram-square.png',
 		link: 'https://lulugram.in',
 		techStack: ['Svelte', 'Sveltekit', 'Tailwind'],
@@ -128,7 +128,7 @@ export const projects: Project[] = [
 			'Designed a multi-tenant architecture to handle support for multiple apps, isolating user data while sharing the core system.',
 			'Delivered a scalable and reusable support system that now serves as a shared foundation across internal products.'
 		],
-		logo: '/lulugramLogo.png',
+		logo: null,
 		image: '/support-system-preview.png',
 		link: null, // Use actual link if exists or leave blank
 		techStack: [

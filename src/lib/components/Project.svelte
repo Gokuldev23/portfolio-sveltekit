@@ -1,35 +1,34 @@
 <script>
-	let { title, description, image, logo } = $props();
+	let { project } = $props();
 
-	let imgLoaded = $state(false);
-	const handleImgLoaded = () => {
-		imgLoaded = true;
-	};
+	let type = $derived(project.type)
+
+	$inspect({type})
+	
 </script>
 
-<!-- <a href="projects/{title}">
-	<img src={image} class="rounded-2xl" alt="" />
-</a> -->
-
-<div class="project relative w-full">
-	<img style=" view-transition-name:{title}-image" class="w-full rounded-xl" src={image} alt="" />
+<div class="relative ">
 	<a
-		class="absolute left-1/2 top-1/2 flex h-full w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl border
-						bg-black/80 text-lg font-semibold uppercase tracking-wider text-white shadow-lg xl:text-2xl"
-		href="/projects/{title}"
+		href={project.link}
+		class="block rounded-2xl bg-gray-800 p-5 shadow-md transition hover:bg-gray-700"
 	>
-		<span class="text-center" style="view-transition-name: {title}-name;">{title}</span>
+		{#if project.logo}
+			<img src={project.logo} width="100px" class="mx-auto mb-4 rounded-md" alt="" />
+		{:else}
+			<div class="text-8xl/[120px] text-center">📦</div>
+		{/if}
+		<h3 class="mb-2 text-xl font-semibold">{project.title}</h3>
+		<p class="mb-3 line-clamp-5 text-sm text-gray-300">
+			{project.description}
+		</p>
+		<div class="flex flex-wrap gap-2">
+			{#each project.techStack as tag}
+				<span class="rounded-full bg-gray-700 px-2 py-1 text-xs">{tag}</span>
+			{/each}
+		</div>
 	</a>
 </div>
 
 <style>
-	.project a {
-		opacity: 0;
-		transition: opacity 400ms ease;
-	}
-
-	.project:hover a {
-		opacity: 1;
-		animation: slide-up 400ms ease-out;
-	}
+	
 </style>
