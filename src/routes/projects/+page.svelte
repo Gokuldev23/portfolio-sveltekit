@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import { projects } from '$lib/js/projects';
 
 	import Project from '$lib/components/Project.svelte';
@@ -29,4 +29,4 @@
 	@view-transition {
 		navigation: auto;
 	}
-</style>
+</style> -->
