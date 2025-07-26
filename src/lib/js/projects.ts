@@ -1,7 +1,7 @@
 type Project = {
 	title: string;
 	description: string;
-	type: "SIDE" | "CORE",
+	type: 'PROFESSIONAL' | 'FEATURED' | 'EXPERIMENTAL';
 	contribution: string[];
 	logo: string | null;
 	image: string | null;
@@ -21,7 +21,7 @@ export const projects: Project[] = [
 					  events seamlessly. It empowers communities by providing a marketplace for buying and selling goods without
 					  platform fees and offers a space to showcase and promote local arts and services. Gramlok exemplifies inclusive
 					  digital innovation, bringing rural communities closer through technology.`,
-		type: 'CORE',
+		type: 'PROFESSIONAL',
 		contribution: [
 			'Contributed to UI development and multi-language support (17+ Indian languages).',
 			'Integrated backend APIs and managed dynamic data rendering.',
@@ -44,7 +44,7 @@ export const projects: Project[] = [
 					  lored to advanced learners. Each crossword is curated to align with the challenging vocabulary requirements of
 					  competitive exams, ensuring users can learn effectively while having fun.The app also includes progress tracking,
 					  word definitions, and contextual examples to reinforce learning.`,
-		type: 'CORE',
+		type: 'PROFESSIONAL',
 		contribution: [
 			'Developed a crossword app for GRE, GMAT, SAT, TOEFL prep.',
 			'Designed UI/UX, integrated APIs, optimized performance, and added in-app purchases.',
@@ -66,7 +66,7 @@ export const projects: Project[] = [
 					  concepts in real-time. Powered by AI, the app personalizes learning paths to suit individual needs and provides an 
 					  engaging environment for students to grasp complex topics efficiently. Its intuitive design ensures accessibility across
 					  devices, fostering a culture of continuous learning.`,
-		type: 'CORE',
+		type: 'PROFESSIONAL',
 
 		contribution: [
 			'Developed a cross-platform e-learning app using React Native/Expo and AI-based features, allowing students to ask questions, learn concepts, and practice quizzes.',
@@ -78,14 +78,11 @@ export const projects: Project[] = [
 		image: '/vidyavart-square.png',
 		link: 'https://vidyavart.in/',
 		techStack: [
-			'expo',
 			'React Native',
 			'mistral AI',
 			'Langchain js',
-			'nativewind',
 			'node',
 			'express',
-			'postgress'
 		],
 		platform: ['android', 'ios'],
 		company: 'Lulugram',
@@ -98,7 +95,7 @@ export const projects: Project[] = [
 					Built entirely with SvelteKit and Tailwind CSS v4, the page serves as both a portfolio and an entry point to the internal marketing dashboard.
 					It emphasizes clean UI, mobile responsiveness, and high performance, offering visitors a seamless first impression of the platform.
 					The layout is structured for scalability, making it easy to extend into a full-featured marketing or admin portal in the future.`,
-		type: 'CORE',
+		type: 'PROFESSIONAL',
 
 		contribution: [
 			'Independently designed and developed a high-converting, responsive landing page for Lulugram, aligning with brand identity and modern UI/UX principles.',
@@ -119,13 +116,13 @@ export const projects: Project[] = [
 		title: 'Centralized Support System',
 		description: `A real-time, multi-tenant support system built for Lulugram and its connected platforms. The system enables users to initiate chats from within any app and routes incoming messages to all active admins. 
 	              The first admin to respond claims the session, ensuring quick, personalized support without collisions. Built with scalability and performance in mind, it serves as a centralized hub for managing customer interactions across apps.`,
-		type: 'CORE',
+		type: 'FEATURED',
 
 		contribution: [
 			'Independently designed and built the entire support system from scratch, including frontend, backend, and socket-based real-time messaging.',
 			'Implemented multi-admin broadcasting, secure session handling, and auto-claiming logic to ensure smooth support workflows.',
 			'Used React Native for the mobile app interface and Node.js + PostgreSQL (with Prisma) on the backend.',
-			'Designed a multi-tenant architecture to handle support for multiple apps, isolating user data while sharing the core system.',
+			'Designed a multi-tenant architecture to handle support for multiple apps, isolating user data while sharing the MAIN system.',
 			'Delivered a scalable and reusable support system that now serves as a shared foundation across internal products.'
 		],
 		logo: null,
