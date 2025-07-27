@@ -4,12 +4,11 @@
     const {category} = $props()
 
     const [categoryName , projects] = $derived(category)
-
 </script>
 
 <section class="xl:mb-16 md:mb-10 mb-6">
 	<h2 class="mb-6 text-2xl font-bold capitalize">🚀 {categoryName.toLowerCase()} Projects</h2>
-	<div class="{projects.length>3?"scrollbar-css":"no-scrollbar"} flex w-full gap-4 overflow-x-scroll rounded-lg p-2">
+	<div class="{projects.length>3?"scroll-bar-css":"no-scrollbar"} flex w-full gap-4 overflow-x-scroll rounded-lg p-2">
 		{#each projects as project}
 			<div class="max-w-xs min-w-80">
 				<Project {project} />
@@ -19,18 +18,28 @@
 </section>
 
 <style>
-    .scrollbar-css{
-		 scrollbar-color: grey rgba(39, 38, 38, 0.649);
-  		scrollbar-width: thin;
+   .scroll-bar-css::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgb(0, 0, 0);
+		background-color: #000000;
 	}
-	.scrollbar-css::-webkit-scrollbar-button {
-        display: none;
-        height: 0;
-        width: 0;
-    }
+
+	.scroll-bar-css::-webkit-scrollbar {
+		width: 10px;
+		scrollbar-width: thin;
+		background-color: #1f1e1e;
+	}
+
+	.scroll-bar-css::-webkit-scrollbar-thumb {
+		background-color: #3a3838;
+		border-radius: 999px;
+	}
     
     .no-scrollbar {
-        scrollbar-width: none;
-        
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;    /* Firefox */
+    }
+    
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
     }
 </style>
