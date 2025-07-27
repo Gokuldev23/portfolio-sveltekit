@@ -2,6 +2,7 @@
 	import '../app.css';
 	import { onNavigate } from '$app/navigation';
 	import Icon from '@iconify/svelte';
+	import InDevelopment from '$lib/components/InDevelopment.svelte';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -18,13 +19,8 @@
 	let { children } = $props();
 </script>
 
-<div class="relative min-h-dvh  bg-black">
-	<div class="fixed right-4 top-4 text-white flex gap-2 items-center bg-yellow-800 px-3 py-0.5 rounded-sm">
-		<div>
-			<Icon icon="arcticons:nrf-toolbox" />
-		</div>
-		<p>In Development</p>
-	</div>
+<div id="scroll-bar-css" class="relative h-dvh overflow-auto bg-black">
+	<InDevelopment devMode={true} />
 	{@render children()}
 </div>
 
@@ -40,5 +36,18 @@
 <style>
 	:global(*) {
 		font-family: 'Poppins', serif;
+	}
+	#scroll-bar-css::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgb(0, 0, 0);
+		background-color: #000000;
+	}
+
+	#scroll-bar-css::-webkit-scrollbar {
+		width: 10px;
+		background-color: #1f1e1e;
+	}
+
+	#scroll-bar-css::-webkit-scrollbar-thumb {
+		background-color: #3a3838;
 	}
 </style>
