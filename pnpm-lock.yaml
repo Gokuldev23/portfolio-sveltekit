@@ -61,7 +61,7 @@ importers:
         version: 5.1.15
       svelte-check:
         specifier: ^4.0.0
-        version: 4.0.7(svelte@5.1.15)(typescript@5.6.3)
+        version: 4.0.7(picomatch@4.0.3)(svelte@5.1.15)(typescript@5.6.3)
       tailwindcss:
         specifier: ^3.4.9
         version: 3.4.14
@@ -1256,6 +1256,10 @@ packages:
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+
+  picomatch@4.0.3:
+    resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
+    engines: {node: '>=12'}
 
   pify@2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
@@ -2468,7 +2472,9 @@ snapshots:
     dependencies:
       reusify: 1.0.4
 
-  fdir@6.4.2: {}
+  fdir@6.4.2(picomatch@4.0.3):
+    optionalDependencies:
+      picomatch: 4.0.3
 
   file-entry-cache@8.0.0:
     dependencies:
@@ -2706,6 +2712,9 @@ snapshots:
 
   picomatch@2.3.1: {}
 
+  picomatch@4.0.3:
+    optional: true
+
   pify@2.3.0: {}
 
   pirates@4.0.6: {}
@@ -2896,11 +2905,11 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-check@4.0.7(svelte@5.1.15)(typescript@5.6.3):
+  svelte-check@4.0.7(picomatch@4.0.3)(svelte@5.1.15)(typescript@5.6.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.1
-      fdir: 6.4.2
+      fdir: 6.4.2(picomatch@4.0.3)
       picocolors: 1.1.1
       sade: 1.8.1
       svelte: 5.1.15

@@ -20,6 +20,3 @@
 
 </div>
 
-<style>
-	
-</style>
