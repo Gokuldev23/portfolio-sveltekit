@@ -1,7 +1,11 @@
+// 1. Define the exact union of types
+type ProjectType = 'PROFESSIONAL' | 'FEATURED' | 'EXPERIMENTAL';
+
+// 2. Define the Project type (as you already have)
 type Project = {
 	title: string;
 	description: string;
-	type: 'PROFESSIONAL' | 'FEATURED' | 'EXPERIMENTAL';
+	type: ProjectType;
 	contribution: string[];
 	logo: string | null;
 	image: string | null;
@@ -13,7 +17,37 @@ type Project = {
 	solo: boolean;
 };
 
+// 3. Map project types to emojis — fully type-checked
+const projectTypeEmojiMap: Record<ProjectType, string> = {
+	PROFESSIONAL: '💼',
+	FEATURED: '🚀',
+	EXPERIMENTAL: '🧪'
+};
+
+export function getProjectEmoji(type: ProjectType): string {
+	return projectTypeEmojiMap[type];
+}
+
+
+
+
 export const projects: Project[] = [
+	{
+		title: 'Next Trade',
+		description: `Next Trade** is a lightweight, modern trading journal designed for retail traders to log trades, 
+					 track performance, and analyze patterns over time. Built for speed and clarity, it helps users improve 
+					 consistency and decision-making with clean visuals and minimal noise.`,
+		type: 'FEATURED',
+		contribution: ['Design', 'Frontend', 'Architecture', 'State Management'],
+		logo: '/NextTradeLogo.png',
+		image: '/images/next-trade-preview.png',
+		link: null,
+		techStack: ['React', 'NextJs', 'Tailwind CSS', 'Postgress', 'Neon', 'Jotai', 'Chart.js'],
+		platform: ['Web'],
+		company: '',
+		underDevelpoment: true,
+		solo: true
+	},
 	{
 		title: 'Gramlok',
 		description: `A large-scale social media platform designed to bridge connections between villages across India. Gramlok
@@ -77,13 +111,7 @@ export const projects: Project[] = [
 		logo: '/vidhyavartLogo.png',
 		image: '/vidyavart-square.png',
 		link: 'https://vidyavart.in/',
-		techStack: [
-			'React Native',
-			'mistral AI',
-			'Langchain js',
-			'node',
-			'express',
-		],
+		techStack: ['React Native', 'mistral AI', 'Langchain js', 'node', 'express'],
 		platform: ['android', 'ios'],
 		company: 'Lulugram',
 		underDevelpoment: true,
@@ -113,7 +141,7 @@ export const projects: Project[] = [
 		solo: true
 	},
 	{
-		title: 'Centralized Support System',
+		title: 'Support System',
 		description: `A real-time, multi-tenant support system built for Lulugram and its connected platforms. The system enables users to initiate chats from within any app and routes incoming messages to all active admins. 
 	              The first admin to respond claims the session, ensuring quick, personalized support without collisions. Built with scalability and performance in mind, it serves as a centralized hub for managing customer interactions across apps.`,
 		type: 'FEATURED',
@@ -125,7 +153,7 @@ export const projects: Project[] = [
 			'Designed a multi-tenant architecture to handle support for multiple apps, isolating user data while sharing the MAIN system.',
 			'Delivered a scalable and reusable support system that now serves as a shared foundation across internal products.'
 		],
-		logo: null,
+		logo: "/defaultLogo.png",
 		image: '/support-system-preview.png',
 		link: null, // Use actual link if exists or leave blank
 		techStack: [
