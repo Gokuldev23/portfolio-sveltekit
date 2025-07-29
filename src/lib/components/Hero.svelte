@@ -6,11 +6,11 @@
 
 	let grouped = Object.groupBy(projects, (item) => item.type);
 
-	let categories = Object.entries(grouped); // [ [type, projects[]], ... ]
+	let categories = Object.entries(grouped);
 
 </script>
 
-<div class="min-h-screen bg-gray-950 px-4 py-10 text-white sm:px-10">
+<div class=" bg-gray-950 px-4 py-10 text-white sm:px-10">
 
 	<About/>
 
