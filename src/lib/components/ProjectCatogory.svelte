@@ -1,13 +1,16 @@
 <script>
+	import { getProjectEmoji } from "$lib/js/projects";
 	import Project from "./Project.svelte";
 
     const {category} = $props()
 
     const [categoryName , projects] = $derived(category)
+
+	const categoryEmoji = $derived(getProjectEmoji(categoryName))
 </script>
 
 <section class="xl:mb-16 md:mb-10 mb-6">
-	<h2 class="mb-6 text-2xl font-bold capitalize">🚀 {categoryName.toLowerCase()} Projects</h2>
+	<h2 class="mb-6 text-2xl font-bold capitalize">{categoryEmoji} {categoryName.toLowerCase()} Projects</h2>
 	<div class="{projects.length>3?"scroll-bar-css":"no-scrollbar"} flex w-full gap-4 overflow-x-scroll rounded-lg p-2">
 		{#each projects as project}
 			<div class="max-w-xs min-w-80">
