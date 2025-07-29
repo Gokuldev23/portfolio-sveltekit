@@ -18,11 +18,7 @@
 			/>
 		</a>
 	{/if}
-	{#if project.logo}
-		<img src={project.logo} width="100px" class="mx-auto mb-4 rounded-md" alt="" />
-	{:else}
-		<div class="text-center text-8xl/[120px]">📦</div>
-	{/if}
+	<img src={project.logo} width="100px" class="mx-auto mb-4 rounded-md" alt="This the current Project Logo" />
 	<h3 class="mb-2 text-xl font-semibold">{project.title}</h3>
 	<p class="mb-3 line-clamp-3 text-sm text-gray-300">
 		{project.description}
