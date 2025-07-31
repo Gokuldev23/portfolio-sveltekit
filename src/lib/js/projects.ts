@@ -1,5 +1,5 @@
 // 1. Define the exact union of types
-type ProjectType = 'PROFESSIONAL' | 'FEATURED' | 'EXPERIMENTAL';
+type ProjectType = 'PROFESSIONAL' | 'FEATURED' | 'EXPERIMENTAL' | 'FIGMA_TO_UI';
 
 // 2. Define the Project type (as you already have)
 type Project = {
@@ -12,7 +12,7 @@ type Project = {
 	link: string | null;
 	techStack: string[];
 	platform: string[];
-	company: string;
+	company: string | null;
 	underDevelpoment: boolean;
 	solo: boolean;
 };
@@ -21,8 +21,35 @@ type Project = {
 const projectTypeEmojiMap: Record<ProjectType, string> = {
 	PROFESSIONAL: '💼',
 	FEATURED: '🚀',
-	EXPERIMENTAL: '🧪'
+	EXPERIMENTAL: '🧪',
+	FIGMA_TO_UI: '🎨'
 };
+
+export const projectTypeMetaData: Record<ProjectType, { label: string; slug: string; emoji: string }> = {
+	PROFESSIONAL: {
+		label: 'Professional',
+		slug: 'professional',
+		emoji: '💼'
+	},
+	FEATURED: {
+		label: 'Featured',
+		slug: 'featured',
+		emoji: '🚀'
+	},
+	EXPERIMENTAL: {
+		label: 'Experimental',
+		slug: 'experimental',
+		emoji: '🧪'
+	},
+	FIGMA_TO_UI: {
+		label: 'Figma to UI',
+		slug: 'figma-to-ui',
+		emoji: '🎨'
+	}
+};
+
+
+
 
 export function getProjectEmoji(type: ProjectType): string {
 	return projectTypeEmojiMap[type];
@@ -153,7 +180,7 @@ export const projects: Project[] = [
 			'Designed a multi-tenant architecture to handle support for multiple apps, isolating user data while sharing the MAIN system.',
 			'Delivered a scalable and reusable support system that now serves as a shared foundation across internal products.'
 		],
-		logo: "/defaultLogo.png",
+		logo: '/defaultLogo.png',
 		image: '/support-system-preview.png',
 		link: null, // Use actual link if exists or leave blank
 		techStack: [
@@ -168,6 +195,58 @@ export const projects: Project[] = [
 		platform: ['mobile'],
 		company: 'Lulugram',
 		underDevelpoment: true,
+		solo: true
+	},
+	{
+		title: 'Meta Hunt',
+		description: `An AI Powered Gaming App`,
+		type: 'FIGMA_TO_UI',
+
+		contribution: [
+			'Built production-ready UIs from Figma mockups — fast, responsive, and accurate to the design specs.'
+		],
+		logo: '/metaHuntLogo.svg',
+		image: null,
+		link: 'https://metahunt.vercel.app/', // Use actual link if exists or leave blank
+		techStack: ['Tailwind', 'Svelte', 'Vite'],
+		platform: ['Web'],
+		company: null,
+		underDevelpoment: false,
+		solo: true
+	},
+	{
+		title: 'LokSa Boxing Gym',
+		description: `A Beautifull Boxing Gym Landing Page`,
+		type: 'FIGMA_TO_UI',
+
+		contribution: [
+			'Built production-ready UIs from Figma mockups — fast, responsive, and accurate to the design specs.'
+		],
+		logo: '/loksaLogo.png',
+		image: null,
+		link: 'https://whimsical-tartufo-263a9a.netlify.app/', // Use actual link if exists or leave blank
+		techStack: ['Tailwind', 'html', 'css', 'Vite'],
+		platform: ['Web'],
+		company: null,
+		underDevelpoment: false,
+		solo: true
+	},
+	{
+		title: 'NervesPark Movie Search',
+		description: `An Experimental Movie Search app based on celebrities`,
+		type: 'EXPERIMENTAL',
+
+		contribution: [
+			'Built the app for learning purpose',
+			'Leveraging Sveltekit and tried its Load functions via SSR'
+		],
+		logo: '/defaultLogo.png',
+		image: null,
+		link: 'https://nervspark-assessment.netlify.app/', // Use actual link if exists or leave blank
+		techStack: ['Tailwind', 'Svelte', 'Vite', 'Sveltekit', 'SSR'],
+		platform: ['Web'],
+		company: null,
+		underDevelpoment: false,
 		solo: true
 	}
 ];
