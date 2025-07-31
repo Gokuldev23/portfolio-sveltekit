@@ -497,7 +497,8 @@ function Root($$payload, $$props) {
     components = [],
     form,
     data_0 = null,
-    data_1 = null
+    data_1 = null,
+    data_2 = null
   } = $$props;
   {
     setContext("__svelte__", stores);
@@ -505,7 +506,7 @@ function Root($$payload, $$props) {
   {
     stores.page.set(page);
   }
-  const Pyramid_1 = constructors[1];
+  const Pyramid_2 = constructors[2];
   if (constructors[1]) {
     $$payload.out += "<!--[-->";
     const Pyramid_0 = constructors[0];
@@ -514,9 +515,29 @@ function Root($$payload, $$props) {
       data: data_0,
       form,
       children: ($$payload2) => {
-        $$payload2.out += `<!---->`;
-        Pyramid_1($$payload2, { data: data_1, form });
-        $$payload2.out += `<!---->`;
+        if (constructors[2]) {
+          $$payload2.out += "<!--[-->";
+          const Pyramid_1 = constructors[1];
+          $$payload2.out += `<!---->`;
+          Pyramid_1($$payload2, {
+            data: data_1,
+            form,
+            children: ($$payload3) => {
+              $$payload3.out += `<!---->`;
+              Pyramid_2($$payload3, { data: data_2, form });
+              $$payload3.out += `<!---->`;
+            },
+            $$slots: { default: true }
+          });
+          $$payload2.out += `<!---->`;
+        } else {
+          $$payload2.out += "<!--[!-->";
+          const Pyramid_1 = constructors[1];
+          $$payload2.out += `<!---->`;
+          Pyramid_1($$payload2, { data: data_1, form });
+          $$payload2.out += `<!---->`;
+        }
+        $$payload2.out += `<!--]-->`;
       },
       $$slots: { default: true }
     });
@@ -550,7 +571,7 @@ const options = {
   root,
   service_worker: true,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n		<link rel="preconnect" href="https://fonts.googleapis.com" />\n		<link rel="preconnect" href="https://fonts.gstatic.com" />\n		<link\n			href="https://fonts.googleapis.com/css2?family=Days+One&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"\n			rel="stylesheet"\n		/>\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -622,7 +643,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "9iaf8y"
+  version_hash: "uy927m"
 };
 async function get_hooks() {
   return {};
