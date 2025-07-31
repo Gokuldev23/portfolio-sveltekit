@@ -1,15 +1,18 @@
-import { T as head, S as pop, Q as push } from "../../chunks/index.js";
+import { T as attr, V as stringify, S as pop, Q as push } from "../../chunks/index.js";
 import "../../chunks/client.js";
 import { I as Icon } from "../../chunks/Icon.js";
+function InDevelopment($$payload, $$props) {
+  const { devMode } = $$props;
+  $$payload.out += `<div${attr("class", `fixed right-4 top-4 z-50 ${stringify(devMode ? "flex" : "hidden")} items-center font-semibold gap-2 rounded-xl bg-yellow-800 px-3 py-0.5 text-white shadow-xl shadow-white`)}><div>`;
+  Icon($$payload, { icon: "arcticons:nrf-toolbox" });
+  $$payload.out += `<!----></div> <p>In Development</p></div>`;
+}
 function _layout($$payload, $$props) {
   push();
   let { children } = $$props;
-  head($$payload, ($$payload2) => {
-    $$payload2.out += `<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Days+One&amp;family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">`;
-  });
-  $$payload.out += `<div class="relative h-dvh overflow-x-hidden bg-black"><div class="fixed right-4 top-4 text-white flex gap-2 items-center bg-yellow-800 px-3 py-0.5 rounded-sm"><div>`;
-  Icon($$payload, { icon: "arcticons:nrf-toolbox" });
-  $$payload.out += `<!----></div> <p>In Development</p></div> `;
+  $$payload.out += `<div id="scroll-bar-css" class="relative h-dvh overflow-auto bg-black svelte-100iycv">`;
+  InDevelopment($$payload, { devMode: true });
+  $$payload.out += `<!----> `;
   children($$payload);
   $$payload.out += `<!----></div>`;
   pop();

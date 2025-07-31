@@ -868,21 +868,15 @@ function render(component, options = {}) {
   payload.out += BLOCK_CLOSE;
   for (const cleanup of on_destroy) cleanup();
   on_destroy = prev_on_destroy;
-  let head2 = payload.head.out + payload.head.title;
+  let head = payload.head.out + payload.head.title;
   for (const { hash, code } of payload.css) {
-    head2 += `<style id="${hash}">${code}</style>`;
+    head += `<style id="${hash}">${code}</style>`;
   }
   return {
-    head: head2,
+    head,
     html: payload.out,
     body: payload.out
   };
-}
-function head(payload, fn) {
-  const head_payload = payload.head;
-  head_payload.out += BLOCK_OPEN;
-  fn(head_payload);
-  head_payload.out += BLOCK_CLOSE;
 }
 const replacements = {
   translate: /* @__PURE__ */ new Map([
@@ -965,18 +959,17 @@ export {
   push as Q,
   setContext as R,
   pop as S,
-  head as T,
+  attr as T,
   UNOWNED as U,
-  escape_html as V,
-  store_get as W,
-  unsubscribe_stores as X,
-  ensure_array_like as Y,
-  attr as Z,
-  stringify as _,
+  stringify as V,
+  getContext as W,
+  escape_html as X,
+  store_get as Y,
+  unsubscribe_stores as Z,
+  ensure_array_like as _,
   active_reaction as a,
   spread_attributes as a0,
   sanitize_props as a1,
-  getContext as a2,
   DERIVED as b,
   increment_version as c,
   derived_sources as d,

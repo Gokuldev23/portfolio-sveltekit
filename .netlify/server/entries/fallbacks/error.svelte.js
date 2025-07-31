@@ -1,6 +1,27 @@
-import { V as escape_html, W as store_get, X as unsubscribe_stores, S as pop, Q as push } from "../../chunks/index.js";
-import { p as page } from "../../chunks/stores.js";
-function Error($$payload, $$props) {
+import { W as getContext, X as escape_html, Y as store_get, Z as unsubscribe_stores, S as pop, Q as push } from "../../chunks/index.js";
+import "../../chunks/client.js";
+const getStores = () => {
+  const stores = getContext("__svelte__");
+  return {
+    /** @type {typeof page} */
+    page: {
+      subscribe: stores.page.subscribe
+    },
+    /** @type {typeof navigating} */
+    navigating: {
+      subscribe: stores.navigating.subscribe
+    },
+    /** @type {typeof updated} */
+    updated: stores.updated
+  };
+};
+const page = {
+  subscribe(fn) {
+    const store = getStores().page;
+    return store.subscribe(fn);
+  }
+};
+function Error$1($$payload, $$props) {
   push();
   var $$store_subs;
   $$payload.out += `<h1>${escape_html(store_get($$store_subs ??= {}, "$page", page).status)}</h1> <p>${escape_html(store_get($$store_subs ??= {}, "$page", page).error?.message)}</p>`;
@@ -8,5 +29,5 @@ function Error($$payload, $$props) {
   pop();
 }
 export {
-  Error as default
+  Error$1 as default
 };
