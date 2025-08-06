@@ -18,7 +18,8 @@
 	let { children } = $props();
 </script>
 
-<div id="scroll-bar-css" class="relative h-dvh overflow-auto bg-black">
+<div id="root-layout" class="relative bg-black h-dvh overflow-auto">
+	<div id="progress" class="fixed top-0 left-0 right-0 h-1 bg-yellow-500 z-50 origin-left" ></div>
 	<InDevelopment devMode={true} />
 	{@render children()}
 </div>
@@ -27,22 +28,42 @@
 	:global(*) {
 		font-family: 'Poppins', serif;
 	}
-	#scroll-bar-css::-webkit-scrollbar-track {
+	#root-layout {
+		scroll-timeline:--scroller;
+	}
+	#root-layout::-webkit-scrollbar-track {
 		-webkit-box-shadow: inset 0 0 6px rgb(0, 0, 0);
 		background-color: #000000;
 	}
 
-	#scroll-bar-css::-webkit-scrollbar {
+	#root-layout::-webkit-scrollbar {
 		width: 10px;
 		background-color: #1f1e1e;
 	}
 
-	#scroll-bar-css::-webkit-scrollbar-thumb {
+	#root-layout::-webkit-scrollbar-thumb {
 		background-color: #3a3838;
 		border-radius: 999px;
 	}
 	@media (width<500px) {
-		#scroll-bar-css::-webkit-scrollbar {
+		#root-layout::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	@keyframes grow-progress {
+		from {
+			transform: scaleX(0);
+		}
+		to {
+			transform: scaleX(1);
+		}
+	}
+
+	#progress {
+		animation: grow-progress linear;
+		animation-timeline: --scroller;
+		@supports not (animation-timeline: scroll(nearest)) {
 			display: none;
 		}
 	}
