@@ -232,8 +232,8 @@ export const projects: Project[] = [
 		solo: true
 	},
 	{
-		title: 'NervesPark Movie Search',
-		description: `An Experimental Movie Search app based on celebrities`,
+		title: 'NextFlick Movie Search',
+		description: `An Experimental Movie Search app`,
 		type: 'EXPERIMENTAL',
 
 		contribution: [
@@ -242,8 +242,8 @@ export const projects: Project[] = [
 		],
 		logo: '/defaultLogo.png',
 		image: null,
-		link: 'https://nervspark-assessment.netlify.app/', // Use actual link if exists or leave blank
-		techStack: ['Tailwind', 'Svelte', 'Vite', 'Sveltekit', 'SSR'],
+		link: 'https://next-flicks-pi.vercel.app/', // Use actual link if exists or leave blank
+		techStack: ['Tailwind', 'React', 'Vite', 'NextJs', 'SSR'],
 		platform: ['Web'],
 		company: null,
 		underDevelpoment: false,
